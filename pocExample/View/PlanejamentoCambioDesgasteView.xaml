@@ -1,0 +1,143 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="pocExample.View.PlanejamentoCambioDesgasteView"
+             xmlns:Gaiola="clr-namespace:pocExample.Component;assembly=pocExample"
+             Title="Planejamento de Câmbio por Desgaste">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Name="Refresh" Icon="icon_refresh"  />
+    </ContentPage.ToolbarItems>
+
+    <ContentPage.Content>
+
+        <Grid RowSpacing="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="80"/>
+                 <RowDefinition Height="1"/>
+                <RowDefinition Height="300"/>
+            </Grid.RowDefinitions>
+
+            <ScrollView
+                Grid.Row="0"
+                Margin="5,0"
+                Orientation="Both"
+                HorizontalScrollBarVisibility="Always">
+
+                <Grid
+                    HorizontalOptions="FillAndExpand"
+                    RowSpacing="0"
+                    ColumnSpacing="20">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Label
+                        Grid.Column="0"
+                        VerticalOptions="Center"
+                        Text="{Binding DescTinnitus, StringFormat='BITOLA EM LAMINAÇÃO: FM {0:c}'}"
+                        FontAttributes="Bold"
+                        LineBreakMode="NoWrap"
+                        TextColor="#000"
+                        FontSize="Default" />
+
+                    <Label
+                        Grid.Column="1"
+                        VerticalOptions="Center"
+                        Text="{Binding DescTinnitus, StringFormat='VOLUME PROGRAMADO: {0:c}t'}"
+                        FontAttributes="Bold"
+                        TextColor="#000"
+                        LineBreakMode="NoWrap"
+                        FontSize="Default" />
+
+                    <Grid
+                        Grid.Column="2">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+
+                        <Label
+                            Grid.Column="0"
+                            FlexLayout.AlignSelf="Center"
+                            VerticalOptions="Center"
+                            Text="VOLUME REALIZADO:"
+                            FontAttributes="Bold"
+                            TextColor="#000"
+                            LineBreakMode="NoWrap"
+                            FontSize="Default" />
+
+                        <StackLayout
+                            VerticalOptions="Center"
+                            Grid.Column="1">
+
+                            <Label
+                                Text="{Binding DescTinnitus, StringFormat='TOTAL: {0:c}t'}"
+                                FontAttributes="Bold"
+                                TextColor="#000"
+                                LineBreakMode="NoWrap"
+                                FontSize="Default" />
+
+                            <Label
+                                Text="{Binding DescTinnitus, StringFormat='TOTAL: {0:c}t'}"
+                                FontAttributes="Bold"
+                                TextColor="#000"
+                                LineBreakMode="NoWrap"
+                                FontSize="Default" />
+
+                        </StackLayout>
+
+                    </Grid>
+
+                    <Label
+                        Grid.Column="3"
+                        VerticalOptions="Center"
+                        Text="{Binding DescTinnitus, StringFormat='VEIO 2: {0:c}t'}"
+                        FontAttributes="Bold"
+                        LineBreakMode="NoWrap"
+                        TextColor="#000"
+                        FontSize="Default" />
+
+                </Grid>
+
+            </ScrollView>
+
+            <BoxView
+                Grid.Row="1"
+                HeightRequest="1" 
+                BackgroundColor="#000" 
+                HorizontalOptions="FillAndExpand" />
+
+            <Gaiola:GaiolaGridComponent Grid.Row="2" />
+            <!--
+            <CollectionView
+                Grid.Row="1"
+                BackgroundColor="Red"
+                ItemsSource="{Binding Testes}"
+                Margin="5,5">
+
+                <CollectionView.ItemsLayout>
+                    <GridItemsLayout Orientation="Horizontal" Span="2"/>
+                </CollectionView.ItemsLayout>
+
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+
+                        <StackLayout>
+                
+                        </StackLayout>
+                        
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+            -->
+            
+        </Grid>
+
+    </ContentPage.Content>
+
+</ContentPage>
