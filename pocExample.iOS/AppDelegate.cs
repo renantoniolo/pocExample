@@ -24,7 +24,7 @@ namespace pocExample.iOS
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
 
-            Forms.SetFlags("CollectionView_Experimental");
+            global::Xamarin.Forms.Forms.SetFlags("CollectionView_Experimental");
             global::Xamarin.Forms.Forms.Init();
             LoadApplication(new App());
 

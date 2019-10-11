@@ -13,5 +13,13 @@ namespace pocExample.View
 
             this.BindingContext = new PlanejamentoCambioDesgasteViewModel();
         }
+
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+
+            ((PlanejamentoCambioDesgasteViewModel)BindingContext).ThisOnAppearing();
+        }
+
     }
 }

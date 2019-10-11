@@ -4,10 +4,12 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     x:Class="pocExample.Component.GaiolaGridComponent"
     ColumnSpacing="0"
-    RowSpacing="0">
+    HeightRequest="350"
+    RowSpacing="0"
+    Margin="10">
     <Grid.RowDefinitions>
         <RowDefinition Height="*" />
-        <RowDefinition Height="20" />
+        <RowDefinition Height="10" />
         <RowDefinition Height="*" />
     </Grid.RowDefinitions>
 
@@ -45,7 +47,7 @@
                         FontSize="Subtitle"/>
 
                     <Label
-                        Text="Guia.: SR12-01"
+                        Text="{Binding CodGuiaEntrada, StringFormat='Guia.: {0}'}"
                         HorizontalTextAlignment="Center"
                         TextColor="#FFF"
                         FontSize="Small"/>
@@ -54,7 +56,7 @@
 
                 <Label
                     Grid.Row="1"
-                    Text="Ton mim: 3.500"
+                    Text="{Binding TonMin, StringFormat='Ton mim: {0}'}"
                     HorizontalTextAlignment="Center"
                     TextColor="#FFF"
                     FontAttributes="Bold"
@@ -62,7 +64,7 @@
 
                 <Label
                     Grid.Row="2"
-                    Text="Ton max: 4.200"
+                    Text="{Binding TonMax, StringFormat='Ton max: {0}'}"
                     HorizontalTextAlignment="Center"
                     TextColor="#FFF"
                     FontAttributes="Bold"
@@ -86,7 +88,7 @@
                     Orientation="Vertical">
 
                     <Label
-                        Text="Gaiola 01"
+                        Text="{Binding Id, StringFormat='Gaiola {0}'}"
                         HorizontalTextAlignment="Center"
                         TextColor="#FFF"
                         FontAttributes="Bold"
@@ -109,7 +111,7 @@
 
                 <Label
                     Grid.Row="1"
-                    Text="Ton mim: 3.500"
+                    Text="{Binding TonMin, StringFormat='Ton mim: {0}'}"
                     HorizontalTextAlignment="Center"
                     TextColor="#FFF"
                     FontAttributes="Bold"
@@ -117,7 +119,7 @@
 
                 <Label
                     Grid.Row="2"
-                    Text="Ton max: 4.200"
+                    Text="{Binding TonMax, StringFormat='Ton max: {0}'}"
                     HorizontalTextAlignment="Center"
                     TextColor="#FFF"
                     FontAttributes="Bold"
@@ -149,7 +151,7 @@
                         FontSize="Subtitle"/>
 
                     <Label
-                        Text="Guia.: SR12-01"
+                        Text="{Binding CodGuiaSaida, StringFormat='Guia.: {0}'}"
                         HorizontalTextAlignment="Center"
                         TextColor="#FFF"
                         FontSize="Small"/>
@@ -158,7 +160,7 @@
 
                 <Label
                     Grid.Row="1"
-                    Text="Ton mim: 3.500"
+                    Text="{Binding TonMin, StringFormat='Ton mim: {0}'}"
                     HorizontalTextAlignment="Center"
                     TextColor="#FFF"
                     FontAttributes="Bold"
@@ -166,7 +168,7 @@
 
                 <Label
                     Grid.Row="2"
-                    Text="Ton max: 4.200"
+                    Text="{Binding TonMax, StringFormat='Ton max: {0}'}"
                     HorizontalTextAlignment="Center"
                     TextColor="#FFF"
                     FontAttributes="Bold"
@@ -215,7 +217,7 @@
                     BackgroundColor="Green"/>
                     
                 <Label
-                    Text="1345,65"
+                    Text="{Binding TotalToneladas1}"
                     HorizontalTextAlignment="Center"
                     VerticalTextAlignment="Center"
                     TextColor="#FFF"
@@ -261,7 +263,7 @@
                         BackgroundColor="Red"/>
 
                     <Label
-                        Text="1345,65"
+                        Text="{Binding Canal01}"
                         HorizontalTextAlignment="Center"
                         VerticalTextAlignment="Center"
                         TextColor="#FFF"
@@ -294,7 +296,7 @@
                         BackgroundColor="Green"/>
 
                     <Label
-                        Text="1345,65"
+                        Text="{Binding Canal02}"
                         HorizontalTextAlignment="Center"
                         VerticalTextAlignment="Center"
                         TextColor="#FFF"
@@ -327,7 +329,7 @@
 
 
                     <Label
-                        Text="1345,65"
+                        Text="{Binding Canal03}"
                         HorizontalTextAlignment="Center"
                         VerticalTextAlignment="Center"
                         TextColor="#FFF"
@@ -355,7 +357,7 @@
                     BackgroundColor="Green"/>
                     
                 <Label
-                    Text="1345,65"
+                    Text="{Binding TotalToneladas3}"
                     HorizontalTextAlignment="Center"
                     VerticalTextAlignment="Center"
                     TextColor="#FFF"
@@ -401,7 +403,7 @@
 
 
                     <Label
-                        Text="1345,65"
+                        Text="{Binding Canal04}"
                         HorizontalTextAlignment="Center"
                         VerticalTextAlignment="Center"
                         TextColor="#FFF"
@@ -435,7 +437,7 @@
 
 
                     <Label
-                        Text="1345,65"
+                        Text="{Binding Canal05}"
                         HorizontalTextAlignment="Center"
                         VerticalTextAlignment="Center"
                         TextColor="#FFF"
@@ -468,7 +470,7 @@
 
 
                     <Label
-                        Text="1345,65"
+                        Text="{Binding Canal06}"
                         HorizontalTextAlignment="Center"
                         VerticalTextAlignment="Center"
                         TextColor="#FFF"
@@ -488,7 +490,7 @@
                 Orientation="Horizontal">
                     
                 <Label
-                    Text="1345,65"
+                    Text="{Binding TotalToneladas3}"
                     HorizontalTextAlignment="Center"
                     VerticalTextAlignment="Center"
                     TextColor="#FFF"
@@ -515,7 +517,7 @@
                 Orientation="Horizontal">
                     
                 <Label
-                    Text="1345,65"
+                    Text="{Binding TotalToneladas4}"
                     HorizontalTextAlignment="Center"
                     VerticalTextAlignment="Center"
                     TextColor="#FFF"
@@ -534,15 +536,6 @@
 
             <Grid Grid.Row="1" Grid.Column="1" BackgroundColor="#2f5194"></Grid>
 
-
-            <!--
-            <BoxView
-                Grid.Row="1"
-                Grid.ColumnSpan="3"
-                HeightRequest="1" 
-                BackgroundColor="#000" 
-                HorizontalOptions="FillAndExpand" />
-            -->
 
 
         </Grid>

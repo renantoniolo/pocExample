@@ -15,7 +15,7 @@
             <Grid.RowDefinitions>
                 <RowDefinition Height="80"/>
                  <RowDefinition Height="1"/>
-                <RowDefinition Height="300"/>
+                <RowDefinition Height="320"/>
             </Grid.RowDefinitions>
 
             <ScrollView
@@ -38,7 +38,7 @@
                     <Label
                         Grid.Column="0"
                         VerticalOptions="Center"
-                        Text="{Binding DescTinnitus, StringFormat='BITOLA EM LAMINAÇÃO: FM {0:c}'}"
+                        Text="{Binding ValueMoc, StringFormat='BITOLA EM LAMINAÇÃO: FM {0:c}'}"
                         FontAttributes="Bold"
                         LineBreakMode="NoWrap"
                         TextColor="#000"
@@ -47,7 +47,7 @@
                     <Label
                         Grid.Column="1"
                         VerticalOptions="Center"
-                        Text="{Binding DescTinnitus, StringFormat='VOLUME PROGRAMADO: {0:c}t'}"
+                        Text="{Binding ValueMoc, StringFormat='VOLUME PROGRAMADO: {0:c}t'}"
                         FontAttributes="Bold"
                         TextColor="#000"
                         LineBreakMode="NoWrap"
@@ -75,14 +75,14 @@
                             Grid.Column="1">
 
                             <Label
-                                Text="{Binding DescTinnitus, StringFormat='TOTAL: {0:c}t'}"
+                                Text="{Binding ValueMoc, StringFormat='TOTAL: {0:c}t'}"
                                 FontAttributes="Bold"
                                 TextColor="#000"
                                 LineBreakMode="NoWrap"
                                 FontSize="Default" />
 
                             <Label
-                                Text="{Binding DescTinnitus, StringFormat='TOTAL: {0:c}t'}"
+                                Text="{Binding ValueMoc, StringFormat='TOTAL: {0:c}t'}"
                                 FontAttributes="Bold"
                                 TextColor="#000"
                                 LineBreakMode="NoWrap"
@@ -95,7 +95,7 @@
                     <Label
                         Grid.Column="3"
                         VerticalOptions="Center"
-                        Text="{Binding DescTinnitus, StringFormat='VEIO 2: {0:c}t'}"
+                        Text="{Binding ValueMoc, StringFormat='VEIO 2: {0:c}t'}"
                         FontAttributes="Bold"
                         LineBreakMode="NoWrap"
                         TextColor="#000"
@@ -110,31 +110,23 @@
                 HeightRequest="1" 
                 BackgroundColor="#000" 
                 HorizontalOptions="FillAndExpand" />
-
-            <Gaiola:GaiolaGridComponent Grid.Row="2" />
-            <!--
+            
             <CollectionView
-                Grid.Row="1"
-                BackgroundColor="Red"
-                ItemsSource="{Binding Testes}"
-                Margin="5,5">
+                Grid.Row="2"
+                ItemsSource="{Binding Gaiolas}"
+                Margin="10">
 
                 <CollectionView.ItemsLayout>
-                    <GridItemsLayout Orientation="Horizontal" Span="2"/>
+                    <GridItemsLayout Orientation="Horizontal" Span="1"/>
                 </CollectionView.ItemsLayout>
 
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
-
-                        <StackLayout>
-                
-                        </StackLayout>
-                        
+                        <Gaiola:GaiolaGridComponent /> 
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
-            </CollectionView>
 
-            -->
+            </CollectionView>
             
         </Grid>
 
