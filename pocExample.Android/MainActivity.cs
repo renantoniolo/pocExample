@@ -20,7 +20,6 @@ namespace pocExample.Droid
 
             base.OnCreate(savedInstanceState);
 
-            global::Xamarin.Forms.Forms.SetFlags("CollectionView_Experimental");
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
             LoadApplication(new App());

@@ -5,6 +5,7 @@
     x:Class="pocExample.Component.GaiolaGridComponent"
     ColumnSpacing="0"
     HeightRequest="350"
+    WidthRequest="400"
     RowSpacing="0"
     Margin="10">
     <Grid.RowDefinitions>

@@ -2,6 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="pocExample.View.PlanejamentoCambioDesgasteView"
+             xmlns:cv="clr-namespace:CarouselView.FormsPlugin.Abstractions;assembly=CarouselView.FormsPlugin.Abstractions"
              xmlns:Gaiola="clr-namespace:pocExample.Component;assembly=pocExample"
              Title="Planejamento de Câmbio por Desgaste">
 
@@ -15,7 +16,7 @@
             <Grid.RowDefinitions>
                 <RowDefinition Height="80"/>
                  <RowDefinition Height="1"/>
-                <RowDefinition Height="320"/>
+                <RowDefinition Height="380"/>
             </Grid.RowDefinitions>
 
             <ScrollView
@@ -110,24 +111,26 @@
                 HeightRequest="1" 
                 BackgroundColor="#000" 
                 HorizontalOptions="FillAndExpand" />
-            
-            <CollectionView
+
+            <ScrollView
                 Grid.Row="2"
-                ItemsSource="{Binding Gaiolas}"
-                Margin="10">
+                Orientation="Both">
 
-                <CollectionView.ItemsLayout>
-                    <GridItemsLayout Orientation="Horizontal" Span="1"/>
-                </CollectionView.ItemsLayout>
+                <FlexLayout
+                    BindableLayout.ItemsSource="{Binding Gaiolas}"
+                    Direction="Row"
+                    JustifyContent="Center"
+                    AlignItems="Center"
+                    AlignContent="Start">
+                    <BindableLayout.ItemTemplate>
+                        <DataTemplate>
+                            <Gaiola:GaiolaGridComponent />
+                        </DataTemplate>
+                    </BindableLayout.ItemTemplate>
+                </FlexLayout>
 
-                <CollectionView.ItemTemplate>
-                    <DataTemplate>
-                        <Gaiola:GaiolaGridComponent /> 
-                    </DataTemplate>
-                </CollectionView.ItemTemplate>
+            </ScrollView>
 
-            </CollectionView>
-            
         </Grid>
 
     </ContentPage.Content>

@@ -1,4 +1,5 @@
 ﻿using System;
+
 using pocExample.View;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -10,6 +11,7 @@ namespace pocExample
         public App()
         {
             InitializeComponent();
+ 
 
             MainPage = new NavigationPage(new PlanejamentoCambioDesgasteView());
         }
